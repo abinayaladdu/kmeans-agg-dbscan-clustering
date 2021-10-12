@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Clustering</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+</head>
+<body style="background-color:#81c8dd">
+    <div class="div1" style="background-color: black; color:#81c8dd;  height:70px;">
+    <h2 class="h22" > CLUSTERING</h2>
+    </div>
+    <div class="div2">
+    <form action="/transform1" method="post" enctype="multipart/form-data">
+    <h4 class="h66" > Predict the clusters using CSV file</h4>
+    <input type="file" name="data_file" class="btn btn-block"/>
+    <button name="clas" value="kmeans1"> Explore K-Means</button>
+   
+    <button name="clas" value="agglomerative2"> Explore Agglomerative</button>
+    <button name="clas" value="dbscan3"> Explore DBSCAN</button>
+    </br>
+    </br>
+    </br>
+    <h5> {{ prediction }}</h5>
+    </br>
+    </br>
+    </br>
+    <h5> {{ prediction1 }}</h5>
+    </br>
+    </br>
+    {{ image|safe }}
+    </form>
+    </div>
+</body>
+<style>
+.div1 {
+    text-align: center;
+}
+
+
+.h22{
+    padding-top:7px;
+    }
+.div2{
+    border:1px solid rgb(184, 48, 48);
+    padding-left:300px;
+    padding-top:50px;
+    }
+button{
+    background-color: rgb(184, 48, 48);
+    color:#81c8dd;
+    }
+</style>
+
+
