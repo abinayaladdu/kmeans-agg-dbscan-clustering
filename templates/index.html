@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Clustering</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+ 
+
+</head>
+<body style="background-color:#779bdf">
+    <div class="div1" style="background-color: black; color:#81c8dd;  height:70px;">
+    <h2 class="h22" > CLUSTERING</h2>
+    </div>
+   
+     <div class="div2">
+    <form action="{{ url_for('predict')}}" method="post">
+    <h4 class="h66" > Feed the points to predict which cluster it is</h4>
+    <label class="la">SepalLengthCm</label>
+      <input class="in" type="text" name="SepalLengthCm" required="required" />
+      </br>
+      </br>
+      <label class="la">SepalWidthCm</label>
+      <input class="in" type="text" name="SepalWidthCm" required="required" />
+      </br>
+      </br>
+      <label class="la">PetalLengthCm</label>
+      <input class="in" type="text" name="PetalLengthCm" required="required" />
+      </br>
+      </br>
+      <label class="la">PetalWidthCm</label>
+      <input class="in" type="text" name="PetalWidthCm" required="required" />
+      </br>
+      </br>
+    <button name="cls" value="kmeans"> Explore K-Means</button>
+    </br>
+    </br>
+    <h1> {{ prediction_text }}</h1>
+    </form>
+    </div>
+   
+    <div class="div2">
+    <form action="/transform" method="post" enctype="multipart/form-data">
+    <h4 class="h66" > Predict the clusters by uploading CSV file</h4>
+    <input type="file" name="data_file" class="btn btn-block"/>
+    <button name="cls" value="kmeans"> Explore K-Means</button>
+   
+    <button name="cls" value="agglomerative"> Explore Agglomerative</button>
+    <button name="cls" value="dbscan"> Explore DBSCAN</button>
+    </br>
+    </br>
+    </form>
+    </div>
+    <div class="div3">
+    <label class="la1"> For vizualization, </label>
+    <form action="/default" method="post" enctype="multipart/form-data">
+    <button>Click Here</button>
+    </form>
+    </div>
+   
+   
+   
+</body>
+
+ 
+
+<style>
+.div1 {
+    text-align: center;
+}
+.div2{
+    border:1px solid rgb(184, 48, 48);
+    padding-left:300px;
+    padding-top:50px;
+    }
+.div3{
+    border:1px solid rgb(184, 48, 48)k;
+    padding-left:300px;
+    padding-top:20px;
+    }
+button{
+    background-color: rgb(184, 48, 48);
+    color:#81c8dd;
+    }
+
+ 
+
+.h22{
+    padding-top:7px;
+    }
+   
+.h66{
+    font-weight:bold;
+    padding-top:5px;
+    }
+.la{
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 6px;
+    text-align: right;
+    width: 150px;
+    vertical-align: top;
+    font-weight:bold;        
+   }
+.la1{
+    font-size:30px;
+    font-weight:bold;
+    }
+</style>
